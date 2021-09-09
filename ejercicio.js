@@ -35,7 +35,11 @@ function CuentaBancaria (nombreTitular, apellidoTitular, numeroCuenta){
         console.log('totales '+(debito?'debito ':'credito')+' total', tot);
     }
     this.mostarPorDebitoCredito = (debito) => {
-        console.log('movimientos '+(debito?'debito ':'credito ')+ this.movimientos.filter(mov=> debito?mov.tipo=='debito':mov.tipo=='credito'));
+        let texto = 'movimientos '+(debito?'debito ':'credito ');
+        this.movimientos.filter(mov=> debito?mov.tipo=='debito':mov.tipo=='credito').forEach(mov=>{
+            texto+= mov.monto + ', ';
+        })
+        console.log(texto);
     }
 }
 
