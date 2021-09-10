@@ -6,15 +6,12 @@ for(let i=1; i<=10; i++){
     arrayOneToTen.push(i);
 }
 
-let newArray = [];
-arrayOneToTen.forEach(num => {
-    newArray.push(num*2);
-})
-console.log(arrayOneToTen);
+let newArray = arrayOneToTen.map(num => num*2);
+console.log(newArray);
 
 //EJERCICIO 6
 
-let  arrayOverFive = newArray.filter(num=> num>5);
+let arrayOverFive = newArray.filter(num=> num>5);
 console.log(arrayOverFive);
 
 //EJERCICIO 7
